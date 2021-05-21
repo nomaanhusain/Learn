@@ -2,6 +2,8 @@
 
 ## Instructions to use
 
+To download the file, right-click on cowin.py and click on `Save Link As`.
+
 Suppose you state is `Uttar Pradesh`, ensure that `U` and `P` are capital.
 Enter proper District name as shown on cowin portal.
 Enter date in the proper **_DD-MM-YYYY_** format otherwise the code might run but results wont be proper.
