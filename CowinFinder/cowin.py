@@ -6,7 +6,7 @@ starttime = time.time()
 headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36'}
 
 # For District ID
-print("Enter your state(First letter should be capital)")
+print("Enter your state(Starting Letters should be capital)")
 stateName=input()
 urlState = "https://cdn-api.co-vin.in/api/v2/admin/location/states"
 
