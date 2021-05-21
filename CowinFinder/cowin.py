@@ -41,7 +41,6 @@ if(districtId==0):
 print("Enter date (WARNING:Make sure it is in DD-MM-YYYY format)")
 date=input()
 url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={districtId}&date={date}"
-print(url)
 page=requests.get(url,headers=headers)
 
 # To send email
