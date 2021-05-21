@@ -2,7 +2,7 @@
 
 ## Instructions to use
 
-To download the file, right-click on cowin.py and click on `Save Link As`.
+Copy all the content of `cowin.py`  and paste them in a `.py` file and execute.
 
 Suppose you state is `Uttar Pradesh`, ensure that `U` and `P` are capital.
 Enter proper District name as shown on cowin portal.
