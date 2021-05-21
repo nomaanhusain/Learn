@@ -4,7 +4,9 @@ import time
 import smtplib
 starttime = time.time()
 headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36'}
-
+print("######## The code is set by default for 18+ people and for Dose 1 slots of COVAXIN. ########")
+print("To change these parameters, check readme on https://github.com/nomaanhusain/Learn/tree/master/CowinFinder")
+print()
 # For District ID
 print("Enter your state(Starting Letters should be capital)")
 stateName=input()
