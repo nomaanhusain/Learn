@@ -14,7 +14,7 @@ Enter date in the proper **_DD-MM-YYYY_** format otherwise the code might run bu
 **The code is set by default for 18+ people and for Dose 1 slots of *COVAXIN*.**
 To change these parameters, get to Line **84** of `cowin.py`.
 
-Inside `if`, it should look something like this:
+Inside `if`, it should look like this:
 `i['available_capacity_dose1']>0 and i['min_age_limit']==18 and i['vaccine']=='COVAXIN'`.
 
 ### Change to Dose 2
@@ -30,10 +30,10 @@ Or if you want to remove age restriction entirely, remove the condition, it shou
 `i['available_capacity_dose1']>0 and i['vaccine']=='COVAXIN'`.
 
 ### To switch vaccine
-If you want to change to `COVISHIELD`, replace `COVAXIN` with `COVISHIELD`, it should look something like this:
+If you want to change to `COVISHIELD`, replace `COVAXIN` with `COVISHIELD`, it should look like this:
 `i['available_capacity_dose1']>0 and i['min_age_limit']==18 and i['vaccine']=='COVISHIELD'`.
 ### To remove vaccine restriction
-If you want to remove vaccine restriction, it should look something like this: 
+If you want to remove vaccine restriction, it should look like this: 
 `i['available_capacity_dose1']>0 and i['min_age_limit']==18`.
 
 
