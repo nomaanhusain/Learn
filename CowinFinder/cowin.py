@@ -42,8 +42,7 @@ if(districtId==0):
 # For session, to find slots
 print("Enter date (WARNING:Make sure it is in DD-MM-YYYY format)")
 date=input()
-url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={districtId}&date={date}"
-page=requests.get(url,headers=headers)
+
 
 # To send email
 def sendmail(email):
@@ -65,15 +64,19 @@ def sendmail(email):
     server.quit()
 print("Enter your email")
 my_email=input()
-allSessionData=page.json()
-sessionData=allSessionData["sessions"]
-count = 0
+
 print()
 print("This will keep running and will check for slots every 1 minute, until manually stopped via Ctrl+C")
 print("An email will be sent as soon as an empty slot is found")
 print("To stop execution, press Ctrl+C")
 print()
+
 while True:
+    url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={districtId}&date={date}"
+    page=requests.get(url,headers=headers)
+    allSessionData=page.json()
+    sessionData=allSessionData["sessions"]
+    count = 0
     for i in sessionData:
         # For 45+ type 45 instead of 18, for covishield replace COVAXIN with COVISHIELD
         # For dose 2 availability replace available_capacity_dose1 with available_capacity_dose2
@@ -84,9 +87,7 @@ while True:
             print()
             print('--------------------------------------------------------')
             count=count+1
-    
     if(count>0):
         sendmail(my_email)
         print("To stop execution, press Ctrl+C")
     time.sleep(60.0 - ((time.time() - starttime) % 60.0))
-
