@@ -38,4 +38,4 @@ If you want to change to `COVISHIELD`, replace `COVAXIN` with `COVISHIELD`, it s
 If you want to remove vaccine restriction, it should look like this: 
 `i['available_capacity_dose1']>0 and i['min_age_limit']==18`.
 
-
+Combinations of these conditions can be used to get desired result accordingly.
