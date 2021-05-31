@@ -2,6 +2,8 @@
 
 ## Instructions to use
 
+In cmd, run `pip install requests`
+
 Copy all the content of `cowin.py`  and paste them in a `.py` file and execute.
 
 Suppose you state is `Uttar Pradesh`, ensure that `U` and `P` are capital.
