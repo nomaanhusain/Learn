@@ -46,7 +46,7 @@ date=input()
 
 
 # To send email
-def sendmail(email,doses):
+def sendmail(email,doses,address):
     print("Sending Mail.........")
     server=smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
@@ -54,7 +54,7 @@ def sendmail(email,doses):
     server.ehlo()
     server.login('nomaanhusain@gmail.com','rsjrhxndsfohgsmp')
     subject=f"{doses} Slot are Available"
-    body= 'Current slot is available with the parameters you put'
+    body= f"Current slot is available with the parameters you put at {address}"
     msg=f"Subject : {subject} \n\n {body}"
     server.sendmail(
         'nomaanhusain@gmail.com',
@@ -79,6 +79,7 @@ while True:
     sessionData=allSessionData["sessions"]
     count = 0
     doseCount=0
+    addresses=""
     for i in sessionData:
         # For 45+ type 45 instead of 18, for covishield replace COVAXIN with COVISHIELD
         # For dose 2 availability replace available_capacity_dose1 with available_capacity_dose2
@@ -86,13 +87,14 @@ while True:
         if(i['available_capacity_dose1']>0 and i['min_age_limit']==18 and i['vaccine']=='COVAXIN') :
             print("Name :",i['name'])
             print("Address :",i['address'])
+            addresses=addresses+"\n ------------ \n"+i['address']
             print("Foundt at:",datetime.datetime.now().time())
             doseCount=doseCount+i['available_capacity_dose1']
             print()
             print('--------------------------------------------------------')
             count=count+1
     if(count>0):
-        sendmail(my_email,doseCount)
+        sendmail(my_email,doseCount,addresses)
         print("To stop execution, press Ctrl+C")
     # print(datetime.datetime.now().time())
     time.sleep(30.0 - ((time.time() - starttime) % 30.0))
