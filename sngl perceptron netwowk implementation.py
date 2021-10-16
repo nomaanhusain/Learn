@@ -10,7 +10,7 @@ class NeuralNetwork():
     def sigmoid_derivative(self,x):
         return x*(1-x)
     def train(self,trn_in,trn_out,iter):
-        for itr in range(70000):
+        for itr in range(iter):
             output=self.think(trn_in)
             error=trn_out-output
 
